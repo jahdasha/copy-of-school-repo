@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    javascript
+  </title>
+</head>
+<body>
+  <script type="text/javascript">
+  	var animals = ['parrot', 'cat', 'dog'];
+
+    console.log(animals.length);
+    console.log(animals[1]);
+    console.log(animals[2]);    
+    console.log(animals[0]);
+    console.log(animals[animals.length]);
+    console.log(animals[animals.length-1]);
+    console.log(animals.indexOf('bear'));
+    console.log(animals.indexOf('parrot'));
+
+
+	animals.push('bear') //pushes to the end
+
+	console.log(animals);
+	console.log(animals.length);
+
+	animals.unshift('rabbit') //pushes to beginning // returns the new array length
+	console.log(animals);
+	console.log(animals.length);
+
+	animals[0] = 'lion'; //replaces a value in an array
+	//check if something exists in an array or not
+	console.log(animals);
+	console.log(animals.length);
+
+	animals.pop() //removes the last element of the array //also returns that element as a value
+
+	if (animals.indexOf('bear') == -1) {
+	  alert('not in the list man');
+	}else{
+	  alert('in the list man')
+	}
+	//choose random option from an array
+	var ranNumZeroToArrLength = Math.random() * animals.length;
+	var roundedNum = Math.floor(ranNumZeroToArrLength); //rounds the number down
+
+	var randomComputerOption = animals[roundedNum];
+  </script>
+</body>
+</html>

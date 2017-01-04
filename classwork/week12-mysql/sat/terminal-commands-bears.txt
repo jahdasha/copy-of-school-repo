@@ -1,0 +1,21 @@
+Create a bears_db database, make a happy_bears table with a primary integer auto incrementing key of id, a name varchar(30) not null, a favorite_food varchar(30) not null, a personality varchar(30) not null.
+
+Insert a happy bear named Nom Nom whose favorite food is tacos and is mean.
+
+Make a node file that uses the mysql npm package, connects to the bears_db database and selects all the bears and returns them to the terminal through a console log.
+
+Run the node file.
+
+
+CREATE DATABASE bears_db;
+USE bears_db;
+CREATE TABLE happy_bears (
+id int AUTO_INCREMENT,
+name varchar(30) NOT NULL,
+favorite_food varchar(30) NOT NULL,
+personality varchar(30) NOT NULL,
+PRIMARY KEY(id)
+); 
+INSERT INTO happy_bears (name, favorite_food, personality) VALUES ('Nom Nom', "Tacos", "Mean");
+
+select * from happy_bears;

@@ -1,0 +1,51 @@
+<h1>Project Management Tool</h1>
+
+<h2>Create a new person</h2>
+
+{{#if logged_in}} <!-- checks to see if they are logged in -->
+  <!-- the below code is a link to the route that allows the user to create a new person-->
+  <form action="/people/create" method="POST">
+    <input type="text" name="name">
+    <input type="submit">
+  </form>
+{{/if}}
+
+{{#unless logged_in}} <!-- if they are not logged in this p tag will appear -->
+  <p>
+    You must login to add a person.
+  </p>
+{{/unless}}
+
+<h2>People</h2>
+
+<ul>
+  {{#each people}}
+    <li>
+      <a href="/people/userprofile"> {{this.name}}</a> <!-- i have to fix route-->
+      {{#if ../logged_in}}
+        <!-- the below code is a link to the route that allows the user to detroy the person-->
+        <a href="/people/{{this.id}}/destroy"> destroy</a>
+      {{/if}}
+      <ul>
+        {{#if ../logged_in}}
+          <li>
+            <form action="/people/{{this.id}}/tasks/create" method="POST" style="display: inline">
+              <input type="text" name="task" placeholder="add task here">
+              <input type="submit" value"assign task">
+            </form>
+          </li>
+        {{/if}}
+
+        {{#each this.Tasks }}
+          <li>
+            {{this.task}}
+            {{#if ../../logged_in}}
+                <!-- the below code is a link to the route that allows the user to detroy the property associated to that person-->
+              <a href="/people/{{this.person_id}}/tasks/{{this.id}}/destroy">destroy</a>
+            {{/if}}
+          </li>
+        {{/each}}
+      </ul>
+    </li>
+  {{/each}}
+</ul>

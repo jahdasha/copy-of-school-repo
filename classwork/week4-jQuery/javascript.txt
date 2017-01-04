@@ -1,0 +1,47 @@
+go to github.com
+open up the console in Chrome
+run this command:
+
+document.body.innerHTML = "<p>I like rock and roll.</p>";
+
+What did the previous JavaScript command do? Write down your answer!
+- print to the page "I like rock and roll" and removed everything else
+
+run these commands one by one.
+
+var newDiv = document.createElement('div');
+
+newDiv;
+
+What did the above code do? Write down your answer!
+- this created an empty div
+
+run this command:
+
+document.body.appendChild(newDiv);
+
+What did the above command do? Write down your answer!
+- append the new div to the body of the page, added it under the previous;y created paragraph tag
+
+run these commands one by one. You run anotherDiv; multiple times so you can see what is happening to it, as you manipulate it.
+
+anotherDiv = document.createElement('div');
+
+anotherDiv;
+
+anotherDiv.innerHTML = 'Frankie just said something';
+sets the innerHTML of the anotherDiv to html
+
+anotherDiv;
+
+anotherDiv.setAttribute('class', 'stuff');
+
+anotherDiv;
+
+document.body.appendChild(anotherDiv);
+
+What did the above code do? Write down your answer
+created another div, added text to the div, gave it a class that was named stuff, then added the div to the page
+
+document.body.innerHTML;
+-prints out whatever is on the page

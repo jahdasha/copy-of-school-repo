@@ -1,0 +1,7 @@
+- go through each card
+- assign number or letter and suit
+- create four arrays for suits
+- check each array to see if they equal 13
+- the array that is less than 13 is the array that you will test
+- check each card to see if it pairs with the expected number or letter
+- if the expected number does not have a pair then that is the card that is missing

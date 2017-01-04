@@ -1,0 +1,412 @@
+Last login: Tue Apr 19 18:54:19 on ttys000
+Jahdashas-MacBook-Pro:~ jahdashaflagg$ mysql
+ERROR 1045 (28000): Access denied for user 'jahdashaflagg'@'localhost' (using password: NO)
+Jahdashas-MacBook-Pro:~ jahdashaflagg$ mysql -u root
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 3
+Server version: 5.7.10 Homebrew
+
+Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.00 sec)
+
+mysql> create database lifeDB
+    -> show databases;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'show databases' at line 2
+mysql> use lifeDB
+ERROR 1049 (42000): Unknown database 'lifedb'
+mysql> \h
+
+For information about MySQL products and services, visit:
+   http://www.mysql.com/
+For developer information, including the MySQL Reference Manual, visit:
+   http://dev.mysql.com/
+To buy MySQL Enterprise support, training, or other products, visit:
+   https://shop.mysql.com/
+
+List of all MySQL commands:
+Note that all text commands must be first on line and end with ';'
+?         (\?) Synonym for `help'.
+clear     (\c) Clear the current input statement.
+connect   (\r) Reconnect to the server. Optional arguments are db and host.
+delimiter (\d) Set statement delimiter.
+edit      (\e) Edit command with $EDITOR.
+ego       (\G) Send command to mysql server, display result vertically.
+exit      (\q) Exit mysql. Same as quit.
+go        (\g) Send command to mysql server.
+help      (\h) Display this help.
+nopager   (\n) Disable pager, print to stdout.
+notee     (\t) Don't write into outfile.
+pager     (\P) Set PAGER [to_pager]. Print the query results via PAGER.
+print     (\p) Print current command.
+prompt    (\R) Change your mysql prompt.
+quit      (\q) Quit mysql.
+rehash    (\#) Rebuild completion hash.
+source    (\.) Execute an SQL script file. Takes a file name as an argument.
+status    (\s) Get status information from the server.
+system    (\!) Execute a system shell command.
+tee       (\T) Set outfile [to_outfile]. Append everything into given outfile.
+use       (\u) Use another database. Takes database name as argument.
+charset   (\C) Switch to another charset. Might be needed for processing binlog with multi-byte charsets.
+warnings  (\W) Show warnings after every statement.
+nowarning (\w) Don't show warnings after every statement.
+resetconnection(\x) Clean session context.
+
+For server side help, type 'help contents'
+
+mysql> /q
+    -> /q
+    -> \q
+Bye
+Jahdashas-MacBook-Pro:~ jahdashaflagg$ mysql -u root
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 4
+Server version: 5.7.10 Homebrew
+
+Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.00 sec)
+
+mysql> create database lifeDB;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| lifeDB             |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> use lifeDB;
+Database changed
+mysql> create table pets;
+ERROR 1113 (42000): A table must have at least 1 column
+mysql> CREATE TABLE pets (
+    -> name varchar(30) NOT NULL,
+    -> type varchar(30) NOT NULL,
+    -> age int NOT NULL
+    -> CREATE TABLE pets ( name varchar(30) NOT NULL, type varchar(30) NOT NULL, age int NOT NULL ); 
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CREATE TABLE pets ( name varchar(30) NOT NULL, type varchar(30) NOT NULL, age in' at line 5
+mysql> CREATE TABLE pets (name varchar(30) NOT NULL, type varchar(30) NOT NULL, age int NOT NULL ); 
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> create database treatsDB;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| lifeDB             |
+| mysql              |
+| performance_schema |
+| sys                |
+| treatsDB           |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql> use treatsDB;
+Database changed
+mysql> \h
+
+For information about MySQL products and services, visit:
+   http://www.mysql.com/
+For developer information, including the MySQL Reference Manual, visit:
+   http://dev.mysql.com/
+To buy MySQL Enterprise support, training, or other products, visit:
+   https://shop.mysql.com/
+
+List of all MySQL commands:
+Note that all text commands must be first on line and end with ';'
+?         (\?) Synonym for `help'.
+clear     (\c) Clear the current input statement.
+connect   (\r) Reconnect to the server. Optional arguments are db and host.
+delimiter (\d) Set statement delimiter.
+edit      (\e) Edit command with $EDITOR.
+ego       (\G) Send command to mysql server, display result vertically.
+exit      (\q) Exit mysql. Same as quit.
+go        (\g) Send command to mysql server.
+help      (\h) Display this help.
+nopager   (\n) Disable pager, print to stdout.
+notee     (\t) Don't write into outfile.
+pager     (\P) Set PAGER [to_pager]. Print the query results via PAGER.
+print     (\p) Print current command.
+prompt    (\R) Change your mysql prompt.
+quit      (\q) Quit mysql.
+rehash    (\#) Rebuild completion hash.
+source    (\.) Execute an SQL script file. Takes a file name as an argument.
+status    (\s) Get status information from the server.
+system    (\!) Execute a system shell command.
+tee       (\T) Set outfile [to_outfile]. Append everything into given outfile.
+use       (\u) Use another database. Takes database name as argument.
+charset   (\C) Switch to another charset. Might be needed for processing binlog with multi-byte charsets.
+warnings  (\W) Show warnings after every statement.
+nowarning (\w) Don't show warnings after every statement.
+resetconnection(\x) Clean session context.
+
+For server side help, type 'help contents'
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| lifeDB             |
+| mysql              |
+| performance_schema |
+| sys                |
+| treatsDB           |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql> use treatsDB;
+Database changed
+mysql> CREATE TABLE candies (name varchar(30) NOT NULL, rating varchar(30) NOT NULL );
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> describe candies;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| name   | varchar(30) | NO   |     | NULL    |       |
+| rating | varchar(30) | NO   |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+2 rows in set (0.01 sec)
+
+mysql> show columns in candies;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| name   | varchar(30) | NO   |     | NULL    |       |
+| rating | varchar(30) | NO   |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> select * from candies;
+Empty set (0.00 sec)
+
+mysql> INSERT INTO candies (name, rating) VALUES ('hersey kisses' , 10);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from candies;
++---------------+--------+
+| name          | rating |
++---------------+--------+
+| hersey kisses | 10     |
++---------------+--------+
+1 row in set (0.00 sec)
+
+mysql> INSERT INTO candies (name, rating) VALUES ('reeses\'s' , 10);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO candies (name, rating) VALUES ('reeses\'s' , 10);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from candies;
++---------------+--------+
+| name          | rating |
++---------------+--------+
+| hersey kisses | 10     |
+| reeses's      | 10     |
+| reeses's      | 10     |
++---------------+--------+
+3 rows in set (0.00 sec)
+
+mysql> INSERT INTO candies (name, rating) VALUES ('jaw breakers' , 4);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO candies (name, rating) VALUES ('gushers' , 8);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from candies;
++---------------+--------+
+| name          | rating |
++---------------+--------+
+| hersey kisses | 10     |
+| reeses's      | 10     |
+| reeses's      | 10     |
+| jaw breakers  | 4      |
+| gushers       | 8      |
++---------------+--------+
+5 rows in set (0.00 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| lifeDB             |
+| mysql              |
+| performance_schema |
+| sys                |
+| treatsDB           |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql> use lifeDB;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> CREATE TABLE users (id int(11), date_added TIMESTAMP, name varchar(16) NOT NULL, full_name varchar(245) NOT NULL, password varchar(245) NOT NULL );
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> select * from users
+    -> select * from users;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'select * from users' at line 2
+mysql> describe users;
++------------+--------------+------+-----+-------------------+-----------------------------+
+| Field      | Type         | Null | Key | Default           | Extra                       |
++------------+--------------+------+-----+-------------------+-----------------------------+
+| id         | int(11)      | YES  |     | NULL              |                             |
+| date_added | timestamp    | NO   |     | CURRENT_TIMESTAMP | on update CURRENT_TIMESTAMP |
+| name       | varchar(16)  | NO   |     | NULL              |                             |
+| full_name  | varchar(245) | NO   |     | NULL              |                             |
+| password   | varchar(245) | NO   |     | NULL              |                             |
++------------+--------------+------+-----+-------------------+-----------------------------+
+5 rows in set (0.00 sec)
+
+mysql> DROP TABLE users;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> describe users;
+ERROR 1146 (42S02): Table 'lifedb.users' doesn't exist
+mysql> CREATE TABLE users (id int(11) NOT NULL, date_added TIMESTAMP, username varchar(16) NOT NULL, full_name varchar(245), password varchar(245) NOT NULL );
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> DROP TABLE users;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> describe users;
+ERROR 1146 (42S02): Table 'lifedb.users' doesn't exist
+mysql> CREATE TABLE users (id int(11) NOT NULL, date_added TIMESTAMP, username varchar(16) NOT NULL, full_name varchar(245), password varchar(245) NOT NULL );
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> describe users;
++------------+--------------+------+-----+-------------------+-----------------------------+
+| Field      | Type         | Null | Key | Default           | Extra                       |
++------------+--------------+------+-----+-------------------+-----------------------------+
+| id         | int(11)      | NO   |     | NULL              |                             |
+| date_added | timestamp    | NO   |     | CURRENT_TIMESTAMP | on update CURRENT_TIMESTAMP |
+| username   | varchar(16)  | NO   |     | NULL              |                             |
+| full_name  | varchar(245) | YES  |     | NULL              |                             |
+| password   | varchar(245) | NO   |     | NULL              |                             |
++------------+--------------+------+-----+-------------------+-----------------------------+
+5 rows in set (0.00 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| lifeDB             |
+| mysql              |
+| performance_schema |
+| sys                |
+| treatsDB           |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql> use treatsDB;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> select * candies;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'candies' at line 1
+mysql> select * from candies;
++---------------+--------+
+| name          | rating |
++---------------+--------+
+| hersey kisses | 10     |
+| reeses's      | 10     |
+| reeses's      | 10     |
+| jaw breakers  | 4      |
+| gushers       | 8      |
++---------------+--------+
+5 rows in set (0.00 sec)
+
+mysql> select count(*) from candies;
++----------+
+| count(*) |
++----------+
+|        5 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> DELETE FROM Customers
+    -> delete from candies where name = "jaw breakers";
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'delete from candies where name = "jaw breakers"' at line 2
+mysql> DELETE FROM Customers delete from candies where name = "jaw breakers" AND rating = "4";
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'delete from candies where name = "jaw breakers" AND rating = "4"' at line 1
+mysql> DELETE FROM candies delete from candies where name = "jaw breakers" AND rating = "4";
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'delete from candies where name = "jaw breakers" AND rating = "4"' at line 1
+mysql> delete from candies where name = "jaw breakers" AND rating = "4";
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from candies;
++---------------+--------+
+| name          | rating |
++---------------+--------+
+| hersey kisses | 10     |
+| reeses's      | 10     |
+| reeses's      | 10     |
+| gushers       | 8      |
++---------------+--------+
+4 rows in set (0.00 sec)
+
+mysql> select * from candies limit 2;
++---------------+--------+
+| name          | rating |
++---------------+--------+
+| hersey kisses | 10     |
+| reeses's      | 10     |
++---------------+--------+
+2 rows in set (0.00 sec)
+
+mysql> select * from candies order by name desc limit 2;
++----------+--------+
+| name     | rating |
++----------+--------+
+| reeses's | 10     |
+| reeses's | 10     |
++----------+--------+
+2 rows in set (0.00 sec)
+
+mysql> 

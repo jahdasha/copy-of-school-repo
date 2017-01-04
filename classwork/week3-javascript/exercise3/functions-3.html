@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>vincent To The Rescue</title>
+</head>
+<body>
+    <h1>There's a cat stuck in a tree.</h1>
+
+    <h2>Who do we call?</h2>
+
+    <h2>vincent.</h2>
+    
+    <p>Type the key in to trigger the functions</p>
+
+    <script type="text/javascript">
+
+      var vincent = {
+          bro : true,
+          doYouLift : true,
+          gramsOfproteinIntake : 240,
+          catchPhraseOne : "I'm so broke right now because I just bought those new subwoofers.",
+          catchPhraseTwo : "You're taking my picture? Hang on. Let me put on my sunglasses.",
+          catchPhraseThree : "My fantasy football team is crushing it.",
+          catchPhraseFour : "You're hot. What's your name?",
+          sayAllCatchPhrases : function(){
+              alert(this.catchPhraseOne);
+              alert(this.catchPhraseTwo);
+              alert(this.catchPhraseThree);
+              alert(this.catchPhraseFour);
+          },
+          upProteinIntake : function(){
+              this.gramsOfproteinIntake++;
+          },
+          stopLifting : function(){
+              this.doYouLift = false;
+          }
+      }
+
+      function doItvincent(let){
+          switch (let) {
+              case 'n':
+                  alert('vincent');
+                  break;
+              case 'b':
+                  alert(vincent.bro);
+                  break;
+              case 'l':
+                  alert(vincent.doYouLift);
+                  break;
+              case 'g':
+                  alert(vincent.gramsOfproteinIntake);
+                  break;
+              case 'c':
+                  vincent.sayAllCatchPhrases();
+                  break;
+              case 'u':
+                  vincent.upProteinIntake();
+                  alert(vincent.gramsOfproteinIntake);
+                  break;
+              case 's':
+                  vincent.stopLifting();
+                  alert(vincent.doYouLift);
+                  break;
+          }
+      }
+      
+      document.onkeyup = function(event) {
+          var letter = String.fromCharCode(event.keyCode).toLowerCase();
+          doItvincent(letter);
+      }
+    </script>
+</body>
+</html>
+```
+

@@ -1,0 +1,23 @@
+With the following steps, run the commands in the MySQL console, but also copy the commands into a movies.sql file, and push this file to a github repository
+1. Create a database in MySQL named movies
+2. Make a table called sam_jackson_movies
+3. Insert the below data into the sam_jackson_movies table
+4. Update the last row in the table to year 2015
+5. Delete the first row of the table
+6. Find out how many total movies are in the table using a SQL query
+7. Finish the bonus
+
+
+------------------------
+
+Use this more easily formatted data in your INSERTs
+
+'Jackie Brown','Ordell Robbie','1997'
+'Shaft','John Shaft','2000'
+'Snakes on a Plane','Neville Flynn','2006'
+'Star Wars: The Clone Wars','Mace Windu','2008'
+'Captain America: The First Avenger','Nick Fury','2011'
+'Fury','Foley','2012'
+'The Avengers','Nick Fury','2012'
+'Django Unchained','Stephen','2012'
+'Avengers: Age of Ultron','Nick Fury','1015'

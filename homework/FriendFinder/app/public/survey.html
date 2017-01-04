@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Survey Page</title>
+
+	<!-- Latest compiled and minified CSS & JS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+	<div class="container">
+		
+		<div class="jumbotron">
+			<h1 class="text-center"><span class="glyphicon glyphicon-fire"></span> Friend Finder</h1>
+			<hr>
+			<h2 class="text-center">Let's See Who's a Potential Match</h2>
+			<br>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-12">
+
+				<!-- Dating Survey -->
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">Dating Survey</h4>
+					</div>
+					<div class="panel-body">
+
+						<form role="form">
+				<!-- Be sure to change this on the bottom since  you are calling the ID -->
+							
+							<div class="form-group">
+								<label for="">Name</label>
+								<input type="text" class="form-control" id="answer_name">
+							</div>
+
+							<div class="form-group">
+								<label for="">Photo URL (Please type http:// in the beginning for the URL) </label>
+								<input type="url" class="form-control" id="answer_photo">
+							</div>
+
+							<div class="form-group">
+								<label for="">1) How often do you go to the gym? {Scale of 1 (low) - 5 (high)}</label>
+								<input type="number" class="form-control" id="answer_firstquestion" min = "1" max ="5">
+							</div>
+
+								<div class="form-group">
+								<label for="">2) How often do you cook? {Scale of 1 (low) - 5 (high)}</label>
+								<input type="number" class="form-control" id="answer_secondquestion" min = "1" max ="5">
+							</div>
+
+								<div class="form-group">
+								<label for="">3) Do you like rock climbing? {Scale of 1 (low) - 5 (high)}</label>
+								<input type="number" class="form-control" id="answer_thirdquestion" min = "1" max ="5">
+							</div>
+						
+							<div class="form-group">
+									<label for="">4) Do you like playing video games? {Scale of 1 (low) - 5 (high)}</label>
+									<input type="number" class="form-control" id="answer_fourthquestion" min = "1" max ="5">
+								</div>	
+
+							<div class="form-group">
+								<label for="">5) Do you like watching television? {Scale of 1 (low) - 5 (high)}</label>
+								<input type="number" class="form-control" id="answer_fifthquestion" min = "1" max ="5">
+							</div>							
+
+
+							<div class="form-group">
+								<label for="">6) Do you like home improvement projects? {Scale of 1 (low) - 5 (high)}</label>
+								<input type="number" class="form-control" id="answer_sixthquestion" min = "1" max ="5">
+							</div>
+
+							<div class="form-group">
+								<label for="">7) Do you like going to museums? {Scale of 1 (low) - 5 (high)}</label>
+								<input type="number" class="form-control" id="answer_seventhquestion" min = "1" max ="5">
+							</div>
+
+							<div class="form-group">
+								<label for="">8) Do you like traveling? {Scale of 1 (low) - 5 (high)}</label>
+								<input type="number" class="form-control" id="answer_eigthquestion" min = "1" max ="5">
+							</div>
+
+							<div class="form-group">
+								<label for="">9) Do you like music festivals? {Scale of 1 (low) - 5 (high)}</label>
+								<input type="number" class="form-control" id="answer_ninthquestion" min = "1" max ="5">
+							</div>
+
+							<div class="form-group">
+								<label for="">10) Do you like sunny weather? {Scale of 1 (low) - 5 (high)}</label>
+								<input type="number" class="form-control" id="answer_tenthquestion" min = "1" max ="5">
+							</div>
+		
+
+							<button type="submit" class="btn btn-primary submit">Submit</button>
+						</form>
+
+					</div>
+				</div>
+	
+			</div>
+		</div>
+
+
+	    <footer class="footer">
+	      <div class="container">
+	      
+	        <p><a href="/api/survey">API Survey </a> | <a href="https://github.com/angelica3010/week13FriendFinder">GitHub Repo</a></p>
+	      </div>
+	    </footer>
+
+	</div>
+	
+</body>
+</html>
+
+<!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
+<script type="text/javascript">
+	// In this code below we create the Front-end Javascript which "POSTS" our form data to our express server.
+	// In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
+	// Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
+	$(".submit").on("click", function(){
+		
+		// Here we grab the form elements when a user submits the survey
+		var friendsAnswers = {
+			name: $('#answer_name').val().trim(),
+			photo: $('#answer_photo').val().trim(),
+			scores: [parseInt($("#answer_firstquestion").val()), parseInt($("#answer_secondquestion").val()),parseInt($("#answer_thirdquestion").val()), parseInt($("#answer_fourthquestion").val()),parseInt($("#answer_fifthquestion").val()), parseInt($("#answer_sixthquestion").val()),parseInt($("#answer_seventhquestion").val()), parseInt($("#answer_eigthquestion").val()),parseInt($("#answer_ninthquestion").val()), parseInt($("#answer_tenthquestion").val())]
+		
+		};
+
+		console.log(friendsAnswers);
+
+$.post( "/api/friends-check", { scores: friendsAnswers.scores }, function(data){
+
+// The data we get back will either be a name in friends.js or a zero if we didn't find a match
+
+	if(data!=0){
+	// console.log(data);
+
+		alert("Your Potential Match is "+ data.name);
+
+
+
+	} else{
+
+		alert("No friends");
+
+		}
+
+	});
+
+	return false
+		    	
+	});
+
+// Clear the form when submitting
+$('#answer_name').val("");
+$('#answer_photo').val("");
+$('#answer_firstquestion').val("");
+$('#answer_secondquestion').val("");
+$('#answer_thirdquestion').val("");
+$('#answer_fourthquestion').val("");
+$('#answer_fifthquestion').val("");
+$('#answer_eigthquestion').val("");
+$('#answer_ninthquestion').val("");
+$('#answer_tenthquestion').val("");
+
+</script>
+
+
+<!-- //heroku link
+https://shrouded-badlands-71793.herokuapp.com/ | https://git.heroku.com/shrouded-badlands-71793.git -->
+

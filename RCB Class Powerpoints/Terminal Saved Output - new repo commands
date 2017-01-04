@@ -1,0 +1,82 @@
+Last login: Tue Apr 19 21:29:05 on ttys000
+Jahdashas-MBP:~ jahdashaflagg$ cd desktop/school/homework/week11/
+Jahdashas-MBP:week11 jahdashaflagg$ ls
+Jahdashas-MBP:week11 jahdashaflagg$ git init
+Initialized empty Git repository in /Users/jahdashaflagg/Desktop/school/homework/week11/.git/
+Jahdashas-MBP:week11 jahdashaflagg$ git add.
+git: 'add.' is not a git command. See 'git --help'.
+
+Did you mean this?
+	add
+Jahdashas-MBP:week11 jahdashaflagg$ git add .
+Jahdashas-MBP:week11 jahdashaflagg$ git commit -m "initializing repo"
+On branch master
+
+Initial commit
+
+nothing to commit
+Jahdashas-MBP:week11 jahdashaflagg$ git push origin master
+error: src refspec master does not match any.
+error: failed to push some refs to 'origin'
+Jahdashas-MBP:week11 jahdashaflagg$ touch main.js
+Jahdashas-MBP:week11 jahdashaflagg$ git add .
+Jahdashas-MBP:week11 jahdashaflagg$ git commit -m "initializing repo"
+[master (root-commit) b315630] initializing repo
+ Committer: Jahdasha Flagg <jahdashaflagg@Jahdashas-MBP.home>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 main.js
+Jahdashas-MBP:week11 jahdashaflagg$ git push origin master
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+Jahdashas-MBP:week11 jahdashaflagg$ cd ..
+Jahdashas-MBP:.Trash jahdashaflagg$ cd ~
+Jahdashas-MBP:~ jahdashaflagg$ cd desktop/school/homework
+Jahdashas-MBP:homework jahdashaflagg$ mkdir week11
+Jahdashas-MBP:homework jahdashaflagg$ cd week11
+Jahdashas-MBP:week11 jahdashaflagg$ echo "# constructor" >>README.md
+Jahdashas-MBP:week11 jahdashaflagg$ ls
+README.md
+Jahdashas-MBP:week11 jahdashaflagg$ git init
+Initialized empty Git repository in /Users/jahdashaflagg/Desktop/school/homework/week11/.git/
+Jahdashas-MBP:week11 jahdashaflagg$ git add README.md
+Jahdashas-MBP:week11 jahdashaflagg$ git commit -m "adding README"
+[master (root-commit) a6fb785] adding README
+ Committer: Jahdasha Flagg <jahdashaflagg@Jahdashas-MBP.home>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+Jahdashas-MBP:week11 jahdashaflagg$ git remote add origin https://github.com/jahdasha/constructors.git
+Jahdashas-MBP:week11 jahdashaflagg$ git push -u origin master
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 240 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/jahdasha/constructors.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+Jahdashas-MBP:week11 jahdashaflagg$ 

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>exercise one</title>
+</head>
+<body>
+<script type="text/javascript">
+//initialize array
+var favTVshows = [];
+
+//for loop 
+for (var i=1; i<4; i++){
+	//starts at 1 for logic purposes
+	//you wouldn't ask the user what their favorite #0 tv show is
+	debugger; // this is a breakpoint
+    favTVshows.push(prompt('what\'s your #' + i + ' favorite tv show?'));
+    console.log(favTVshows);
+}
+
+for(var i=0; i < favTVshows.length; i++){
+	debugger;
+    alert(favTVshows[i]);
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <!-- Main app CSS -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- Modal CSS -->
+    <link rel="stylesheet" type="text/css" href="css/modals/modalstyle.css">
+    <!-- Quagga UPC Scanner CSS -->
+    <link rel="stylesheet" href="css/quagga.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Quagga UPC CSS -->
+    <link rel="stylesheet" href="css/quagga.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/agency.css">
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <!-- jquery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!-- Boootsrap Javascript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <title>Can I Eat This?</title>
+</head>
+
+<body class="wrapper">
+    <header role="banner">
+        <a href="/">
+            <p id="logo">Can I Eat This?</p>
+        </a>
+        <nav class="main-nav holder">
+            <ul>
+                <!-- If user is logged in display sign out -->
+                {{#if checkSession.logged_in}}
+                <li class="navLinks" ><a id="loggingOut" href="/users/sign-out">Sign Out</a></li>
+                {{/if}}
+                <!-- IF user is not logged in display sign in and sign out -->
+                {{#unless checkSession.logged_in}}
+                <li class="navLinks"><a class="cd-signin" href="#sign-in">Sign in</a></li>
+                <li class="navLinks"><a class="cd-signup" href="#sign-up">Sign up</a></li>
+                {{/unless}}
+                <li class="navLinks"><a class="aboutus" href="aboutus">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="cd-user-modal">
+        <!-- this is the entire modal form, including the background -->
+        <div class="cd-user-modal-container">
+            <!-- this is the container wrapper -->
+            <ul class="cd-switcher">
+                <li><a href="#sign-in">Sign in</a></li>
+                <li><a href="#new-account">New account</a></li>
+            </ul>
+
+            <div id="cd-login">
+                <!-- log in form -->
+                <form class="cd-form" action="/users/login" method="POST">
+                    <p class="fieldset">
+                        <label class="image-replace cd-email" for="signin-email">E-mail</label>
+                        <input class="full-width has-padding has-border" id="signin-email" name="email" type="email" placeholder="E-mail">
+                    </p>
+
+                    <p class="fieldset">
+                        <label class="image-replace cd-password" for="signin-password">Password</label>
+                        <input class="full-width has-padding has-border" id="signin-password" name="password" type="text" placeholder="Password">
+                        <a href="#0" class="hide-password">Hide</a>
+                    </p>
+
+                    <p class="fieldset">
+                        <input class="full-width" type="submit" value="Login">
+                    </p>
+                </form>
+
+                <p class="cd-form-bottom-message"><a href="#0">Forgot your password?</a></p>
+                <a href="#0" class="cd-close-form">Close</a>
+            </div>
+            <!-- cd-login -->
+
+            <div id="cd-signup">
+                <!-- sign up form -->
+                <form class="cd-form" action="/users/create" method="POST">
+                    <p class="fieldset">
+                        <label class="image-replace cd-username" for="signup-username">Username</label>
+                        <input class="full-width has-padding has-border" id="signup-username" name="username" type="text" placeholder="Username">
+                    </p>
+
+                    <p class="fieldset">
+                        <label class="image-replace cd-email" for="signup-email">E-mail</label>
+                        <input class="full-width has-padding has-border" id="signup-email" name="email" type="email" placeholder="E-mail">
+                    </p>
+
+                    <p class="fieldset">
+                        <label class="image-replace cd-password" for="signup-password">Password</label>
+                        <input class="full-width has-padding has-border" id="signup-password" name="password" type="text" placeholder="Password">
+                        <a href="#0" class="hide-password">Hide</a>
+                    </p>
+
+                    <p class="fieldset">
+                        <input class="full-width has-padding" type="submit" value="Create account">
+                    </p>
+                </form>
+                <a href="#0" class="cd-close-form">Close</a>
+            </div>
+            <!-- cd-signup -->
+
+            <div id="cd-reset-password">
+                <!-- reset password form -->
+                <p class="cd-form-message">Lost your password? Please enter your email address. You will receive a link to create a new password.</p>
+
+                <form class="cd-form">
+                    <p class="fieldset">
+                        <label class="image-replace cd-email" for="reset-email">E-mail</label>
+                        <input class="full-width has-padding has-border" id="reset-email" type="email" placeholder="E-mail">
+                        <span class="cd-error-message">Error!</span>
+                    </p>
+
+                    <p class="fieldset">
+                        <input class="full-width has-padding" type="submit" value="Reset password">
+                    </p>
+                </form>
+
+                <p class="cd-form-bottom-message"><a href="#0">Back to log-in</a></p>
+            </div>
+            <!-- cd-reset-password -->
+            <a href="#0" class="cd-close-form">Close</a>
+        </div>
+        <!-- cd-user-modal-container -->
+    </div>
+
+    <div id="topSection">
+        {{{ body }}}
+    </div>
+
+<!-- <footer>
+        2016 Copyright Jamie Jahdasha Brianne
+    </footer> -->
+
+<!-- Modal javascript -->
+<script src="javascript/additives.js"></script>
+<!-- Modernizr javascript - Used by our modal -->
+<script src="javascript/modernizr.js"></script>
+<!-- Backstretch Background Image Script -->
+<script src="javascript/jquery.backstretch.min.js"></script>
+</body>
+
+</HTML>

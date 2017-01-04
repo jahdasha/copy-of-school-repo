@@ -1,0 +1,10 @@
+CREATE DATABASE seinfeld_db;
+SHOW DATABASES;
+USE seinfeld_db;
+CREATE TABLE actors(id int AUTO_INCREMENT, name varchar(124), coolness_points int, attitude varchar(124), PRIMARY KEY(id));
+SHOW TABLES;
+INSERT INTO actors (name, coolness_points, attitude) VALUES ('James', 4 , 'pleasant');
+INSERT INTO actors (name, coolness_points, attitude) VALUES ('Jim', 2 , 'happy');
+INSERT INTO actors (name, coolness_points, attitude) VALUES ('John', 6 , 'grumpy');
+INSERT INTO actors (name, coolness_points, attitude) VALUES ('Jerry', 8 , 'chill');
+select * from actors;

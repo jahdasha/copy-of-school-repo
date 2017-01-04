@@ -1,0 +1,25 @@
+<head>
+  <title>File Upload Demo</title>
+</head>
+
+<body>
+
+  {{>fileList}}
+</body>
+
+<template name="fileList">
+    <br/>Testing file upload below<br/><br/>
+  <input class="your-upload-class" type="file">
+  <br/><br/>
+
+
+  <table border="1">
+    <tbody>
+      {{#each theFiles}}
+      <li>
+        {{original.name}}  <a href="{{url}}">link</a>  <button id="deleteFileButton">delete</button>
+      </li>
+      {{/each}}
+    </tbody>
+  </table>
+</template>

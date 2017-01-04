@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Favorite Movies</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container">
+  <h1>Movie Search</h1>
+
+  <div id="movieView">
+
+  </div>
+
+  <form id="movie-form">
+    <label for="movie-input">Search for a movie</label>
+    <input type="text" id="movie-input"><br>
+   
+    <input id="findMovie" type="submit" value="Movie Search">
+  </form>
+  <!-- javascript -->
+<script src='http://code.jquery.com/jquery-2.1.3.min.js'></script>
+<script type="text/javascript">
+    $('#findMovie').on('click', function(){
+        var movie = $('#movie-input').val();
+        var queryURL = "http://www.omdbapi.com/?t=" + movie + "&y=&plot=short&r=json";
+        //Write code between the dashes below to hit the queryURL with $ajax, then take the response data and display it in the div with an id of movieView
+
+        //------YOUR CODE GOES IN THESE DASHES. DO NOT MANUALLY TOUCH THE HTML ABOVE.
+        $.ajax({url: queryURL, method: 'GET'}).done(function(response) {
+          console.log(response); // console test to make sure something returns
+          var jsonText = JSON.stringify(response);
+          // json.stringify() is required display the response on the page in html
+          // you can not put an object in .html without making it a string
+          $("#movieView").html(jsonText);
+          // $("#movieView").html(JSON.stringify(response)); <----- this also works rather than the two lines above
+        });
+        //------
+        return false; // cancels the input submit button, rather than it going to another page when we right false it does nothing
+    })
+</script>
+
+
+</body>
+</html>

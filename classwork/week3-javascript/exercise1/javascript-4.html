@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    data types, user input, conditional logic
+  </title>
+</head>
+<body>
+  <script type="text/javascript">
+  	//exercise
+    var eatSteak = confirm("Do you eat steak?");
+
+    if (eatSteak){
+    	document.write ("Here's a steak.");
+    }else{
+    	document.write ("Here's a tofu stir fry!");
+    }
+
+    //bonus
+    var year = prompt("What year were you born?");
+
+    if (year > 1987){
+    	alert ("you're younger than Pavan.");
+    }else if (year < 1987){
+		alert ("you're older than Pavan.");    	
+    }else{
+    	alert ("you're around the same age as Pavan.");
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+Last login: Tue Mar 29 18:36:48 on console
+Jahdashas-MacBook-Pro:~ jahdashaflagg$ cd desktop/school/homework/group/
+Jahdashas-MacBook-Pro:group jahdashaflagg$ ls
+Marvel-Superhero-Database	marvel-call2.html
+marvel-call.html
+Jahdashas-MacBook-Pro:group jahdashaflagg$ cd Marvel-Superhero-Database/
+Jahdashas-MacBook-Pro:Marvel-Superhero-Database jahdashaflagg$ ls
+README.md	assets		composer.json	index.html	index.php
+Jahdashas-MacBook-Pro:Marvel-Superhero-Database jahdashaflagg$ git branch
+* jf-changes
+  master
+Jahdashas-MacBook-Pro:Marvel-Superhero-Database jahdashaflagg$ git checkout master
+error: Your local changes to the following files would be overwritten by checkout:
+	assets/css/style.css
+	assets/javascript/comic.js
+Please, commit your changes or stash them before you can switch branches.
+Aborting
+Jahdashas-MacBook-Pro:Marvel-Superhero-Database jahdashaflagg$ git stash
+Saved working directory and index state WIP on jf-changes: cc98473 store the refined results in variables in comic.js
+HEAD is now at cc98473 store the refined results in variables in comic.js
+Jahdashas-MacBook-Pro:Marvel-Superhero-Database jahdashaflagg$ git checkout master
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+Jahdashas-MacBook-Pro:Marvel-Superhero-Database jahdashaflagg$ git branch -d jf-changes
+error: The branch 'jf-changes' is not fully merged.
+If you are sure you want to delete it, run 'git branch -D jf-changes'.
+Jahdashas-MacBook-Pro:Marvel-Superhero-Database jahdashaflagg$ git branch -D jf-changes
+Deleted branch jf-changes (was cc98473).
+Jahdashas-MacBook-Pro:Marvel-Superhero-Database jahdashaflagg$ git pull
+remote: Counting objects: 53, done.
+remote: Compressing objects: 100% (41/41), done.
+remote: Total 53 (delta 25), reused 37 (delta 11), pack-reused 0
+Unpacking objects: 100% (53/53), done.
+From https://github.com/bilalmian/Marvel-Superhero-Database
+   bf4d5b2..a68b96c  master     -> origin/master
+ * [new branch]      StevenBranch- -> origin/StevenBranch-
+ * [new branch]      bilal      -> origin/bilal
+Updating bf4d5b2..a68b96c
+Fast-forward
+ .DS_Store                           | Bin 6148 -> 6148 bytes
+ assets/.DS_Store                    | Bin 6148 -> 6148 bytes
+ assets/css/style.css                |   3 ++
+ assets/images/.DS_Store             | Bin 6148 -> 6148 bytes
+ assets/images/background.jpg        | Bin 0 -> 555224 bytes
+ assets/images/concrete_seamless.png | Bin 0 -> 81227 bytes
+ assets/javascript/.DS_Store         | Bin 0 -> 6148 bytes
+ assets/javascript/app.js            |  60 ++++++++++++++++++++++
+ assets/javascript/comic.js          |  96 ++++++++++++++++++++++++++++++++++++
+ index.html                          |  49 ++++++++++++++++--
+ 10 files changed, 204 insertions(+), 4 deletions(-)
+ create mode 100644 assets/css/style.css
+ create mode 100644 assets/images/background.jpg
+ create mode 100755 assets/images/concrete_seamless.png
+ create mode 100644 assets/javascript/.DS_Store
+ create mode 100644 assets/javascript/app.js
+ create mode 100644 assets/javascript/comic.js
+Jahdashas-MacBook-Pro:Marvel-Superhero-Database jahdashaflagg$ 

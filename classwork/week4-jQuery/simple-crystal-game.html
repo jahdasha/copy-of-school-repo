@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>simple crystal game</title>
+        <style type="text/css">
+            .crystalImage{
+                width: 300px;
+                height: 300px;
+            }
+        </style>
+    </head>
+    <body>
+        <p><span id="number"></span></p>
+        <p><span id="yourNumber"></span></p>
+        <!-- added this image -->
+        <div id="crystals">
+        </div>
+       
+       <!-- added jQuery -->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+
+                var numberToGuess = 50;
+
+                var counter = 0;
+
+                var numbers = [10, 5, 3, 7];
+
+                $('#number').text(numberToGuess);
+                
+                for (var i=0; i<numbers.length; i++){
+                    var imageCrystal = $('<img>');
+                    imageCrystal.attr('data-num', numbers[i]);
+                    imageCrystal.attr('src', 'http://cdn.playbuzz.com/cdn/7a5d7935-6177-4be8-8b72-2a95ad2bcdfe/3b295cc9-7b5e-412f-8b1f-8547edd8e66b.jpg');
+                    imageCrystal.attr('alt', 'crystals');
+                    imageCrystal.addClass('crystalImage');
+
+                    $('#crystals').append(imageCrystal);
+                    debugger;
+                }
+
+                $('.crystalImage').on('click', function(){
+                    counter = counter + parseInt($(this).data('num'));
+                    console.log(counter);
+                    debugger;
+
+                    $('#yourNumber').text(counter);
+
+                    if (counter == numberToGuess){
+                        alert('You won!!!');
+                    }else if(counter > numberToGuess){
+                        alert('You lost');
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

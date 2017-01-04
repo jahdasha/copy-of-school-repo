@@ -1,0 +1,27 @@
+CREATE DATABASE places;
+USE places;
+CREATE TABLE countries (
+id int AUTO_INCREMENT,
+country varchar(30) NOT NULL,
+PRIMARY KEY(id)
+); 
+INSERT INTO countries (country) VALUES ('U.S.A.');
+INSERT INTO countries (country) VALUES ('U.K.');
+INSERT INTO countries (country) VALUES ('FRANCE');
+
+CREATE TABLE cities (
+id int AUTO_INCREMENT,
+city varchar(30) NOT NULL,
+hipsters varchar(30) NOT NULL,
+country_id int NOT NULL,
+FOREIGN KEY(country_id) REFERENCES countries(id),
+PRIMARY KEY(id)
+); 
+
+INSERT INTO cities (city, hipsters, country_id) VALUES ('paris',85000, 3);
+INSERT INTO cities (city, hipsters, country_id) VALUES ('san francisco',290000, 1);
+INSERT INTO cities (city, hipsters, country_id) VALUES ('london',150000, 2);
+INSERT INTO cities (city, hipsters, country_id) VALUES ('new york city', 370000, 3);
+
+select * from countries;
+select * from cities;

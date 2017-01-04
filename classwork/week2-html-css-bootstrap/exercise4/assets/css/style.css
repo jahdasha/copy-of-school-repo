@@ -1,0 +1,12 @@
+#main-container{
+	width: 400px;
+	margin:;
+}
+
+.floated-box{
+
+}
+.clear{
+	clear: both; /*this allows the main-container box to span the
+	the end of the content in it*/
+}

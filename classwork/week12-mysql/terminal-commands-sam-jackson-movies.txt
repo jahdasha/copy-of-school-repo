@@ -1,0 +1,27 @@
+1
+CREATE DATABASE movies;
+SHOW DATABASES;
+USE movies;
+2
+CREATE TABLE sam_jackson_movies( movie varchar(64), role varchar(32),year int);
+SHOW TABLES;
+3
+INSERT INTO sam_jackson_movies (movie, role, year) VALUES ('Jackie Brown','Ordell Robbie','1997');
+INSERT INTO sam_jackson_movies (movie, role, year) VALUES ('Shaft','John Shaft','2000');
+INSERT INTO sam_jackson_movies (movie, role, year) VALUES ('Snakes on a Plane','Neville Flynn','2006');
+INSERT INTO sam_jackson_movies (movie, role, year) VALUES ('Star Wars: The Clone Wars','Mace Windu','2008');
+INSERT INTO sam_jackson_movies (movie, role, year) VALUES ('Captain America: The First Avenger','Nick Fury','2011');
+INSERT INTO sam_jackson_movies (movie, role, year) VALUES ('Fury','Foley','2012');
+INSERT INTO sam_jackson_movies (movie, role, year) VALUES ('The Avengers','Nick Fury','2012');
+INSERT INTO sam_jackson_movies (movie, role, year) VALUES ('Django Unchained','Stephen','2012');
+INSERT INTO sam_jackson_movies (movie, role, year) VALUES ('Avengers: Age of Ultron','Nick Fury','1015');
+
+select * from sam_jackson_movies;
+4
+UPDATE sam_jackson_movies SET year=2015 WHERE year=1015;
+select * from sam_jackson_movies;
+5
+DELETE FROM sam_jackson_movies LIMIT 1;
+select * from sam_jackson_movies;
+6
+SELECT COUNT(movie) FROM sam_jackson_movies;

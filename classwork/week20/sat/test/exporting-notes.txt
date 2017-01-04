@@ -1,0 +1,41 @@
+### exporting everything
+
+* old way
+
+```// module.js
+module.exports.table = {foo: 'bar'};
+module.exports.hello = function () {};
+
+// main.js
+module.exports = require('./module');
+module.exports.hello = require('./module').hello;
+module.exports.foo = require('./module').hello;
+```
+
+* new way
+
+```// module.js
+const PI = 3.14;
+const value = 42;
+export const table = {foo: 'bar'};
+export function hello() {};
+
+// main.js
+export * from './module';
+export {hello} from './module';
+export {hello as foo} from './module';
+
+------------------------------------------------------------
+
+13.3 Arrow function syntax
+The "fat" arrow => (as opposed to the thin arrow ->) was chosen to be compatible with CoffeeScript, whose fat arrow functions are very similar.
+
+Specifying parameters:
+
+    () => { ... } // no parameter
+     x => { ... } // one parameter, an identifier
+(x, y) => { ... } // several parameters
+Specifying a body:
+
+x => { return x * x }  // block
+x => x * x  // expression, equivalent to previous line

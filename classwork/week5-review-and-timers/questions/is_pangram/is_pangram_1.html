@@ -1,0 +1,23 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	var givenString = prompt("Please enter your sentence.");// asking the user for a sentence
+	
+	function isPangram(s){
+		var arr = s.replace(/[^a-zA-Z]/g, '').toLowerCase().split(""); // splits puts items into an array
+		
+		if (s.length < 26){
+			alert("Not a pangram");
+		}else{
+			alert("I don't know");
+		}
+	}
+
+	console.log(isPangram(givenString));
+</script>
+</body>
+</html>

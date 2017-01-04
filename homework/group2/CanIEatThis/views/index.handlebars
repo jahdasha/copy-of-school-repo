@@ -1,0 +1,23 @@
+
+<!-- Home page display template -->
+
+<div class="container">
+
+  <form method="get" action="/searchResults" novalidate>
+    <h2 id="text">Enter a UPC code or scan one below.</h2>
+    <input type="text" id="searchTextbox" name="upccode" placeholder=" Search..." required><br>
+    <input type="submit" name="name" value="Search" id="searchButton">
+    <button type="button" id="scanButton">Scan UPC</button>
+    <button type="button" id="speechButton">Speak UPC</button>
+    <!-- Display UPC scanning box here -->
+    <div id="interactive" class="viewport"></div>
+  </form>
+
+</div>
+
+<!-- UPC scanner javascript -->
+<script src="javascript/quagga.min.js" type="text/javascript"></script>
+<!-- UPC locator javascript -->
+<script src="javascript/live_w_locator.js" type="text/javascript"></script>
+<!-- Main Landing Page javascript -->
+<script src="javascript/script.js"></script>

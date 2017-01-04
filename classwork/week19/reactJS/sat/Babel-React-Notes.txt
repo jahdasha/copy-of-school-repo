@@ -1,0 +1,22 @@
+* babel ----> is a javascript compiler that creates bundle.js
+* webpack -w ----> webpack compiles the babel in js and the w stands for watch
+  then open up your index.html file
+
+* React.createClass ----> creates a component
+* className ----> is how you identify classes in React
+
+renders component
+ReactDOM.render(
+ $('#app') ---->
+)
+
+render: function(){
+ return(
+   <div className="panel">
+     <h1>HI</h1>
+   </div>
+ )
+}
+
+deploys the child component, we'll pass it to the parent's click counter as a state
+<Child />

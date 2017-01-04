@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>PickEm</title>
+    </head>
+    <body>
+        <h1>PickEm!</h1>
+    
+        <div class="dog">German shepherd</div>
+        <div class="dog">Shiba Inu</div>
+        <div class="dog">Greyhound</div>
+        </br>
+        <div id="cat">Siamese Cat</div>
+        </br>
+        <div data-name='red'>Red Panda</div>
+        </br>
+        <div id="beast" alt-name="Johnny" data-name='bigFootXXXXX'></div>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+        <script type="text/javascript">
+            $( document ).ready(function() {
+                function pickThings () { 
+                    //selecting via class
+                    var dog = $( ".dog" );
+                    //jQuery selects the elements with a class of dog and logs them as an array like object
+                    console.log(dog);
+                    //getting to the text of the one of selected object
+                    console.log(dog.eq(1).text());
+                    //select via id
+                    document.getElementById("cat");
+                    var kitty = $("#cat");
+                    console.log(kitty.eq(0).text());
+                    //select via data-attribute
+                    var panda = $('*[data-name="red"]');
+                    console.log(panda.eq(0).html());
+                    //getting to the data-attribute of an element
+                    var element = $('#beast');
+                    console.log(element.attr('data-name'));
+                    console.log(element.attr('alt-name'));
+                };
+                pickThings();
+            });
+        </script>
+    </body>
+</html>

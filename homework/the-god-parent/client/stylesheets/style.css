@@ -1,0 +1,152 @@
+/* Global styling*/
+.page-spacer{
+  padding: 20px;
+}
+.PageHeader{
+  text-align: center;
+  color: #f95558;
+  font-size: 100px;
+  font-family: corsiva, cursive;
+}
+.PageFooter{
+  background-color: grey;
+  padding: 45px;
+  text-align: center;
+  color: #f95558;
+  font-family: corsiva, cursive;
+}
+.navbar-header{
+  background-color: grey;
+  padding: 45px;
+}
+.footer{
+  color: #f95558;
+  text-decoration: none;
+}
+#login a {
+  color: #1490b5;
+  background-color: #fff;
+  text-decoration: none;
+  padding: 5px;
+  margin-top: 25px;
+  border: #f95558 2px dotted;
+  border-radius: 40px;
+  font-size: 15px;
+  font-family: corsiva, cursive;
+}
+#login-dropdown-list {
+  position: fixed;
+  top: 2px;
+  left: 2px;
+}
+#login-buttons .login-button, .accounts-dialog .login-button {
+    background: #f95558;
+}
+#login-buttons:hover .login-button, .accounts-dialog .login-button {
+    background: #1490b5;
+}
+.PGloginButton{
+  color: #1490b5;
+  border: #f95558 2px dotted;
+  border-radius: 40px;
+  font-size: 20px;
+  font-family: corsiva, cursive;
+  background: #fff;
+}
+#leftcolumn, #rightcolumn {
+    border: 1px solid white;
+    float: left;
+    min-height: 450px;
+    color: white;
+}
+.pageImage{
+  display: block;
+  margin: auto;
+  width:25%;
+}
+img.columnImage{
+  background: url(http://cliparts.co/cliparts/8T6/8xz/8T68xzayc.jpg);
+  background-size: 80px 60px;
+  background-repeat: no-repeat;
+}
+/*-------------------------------------------------*/
+/* Styling for the landing page */
+.appdescription{
+  text-align: center;
+  display: block;
+  margin: auto;
+  height: 100%;
+  width: 75%;
+}
+.landingPGSpan{
+  color: #1490b5;
+  font-size: 20px;
+  font-family: corsiva, cursive;
+}
+/*-------------------------------------------------*/
+/* Styling for site */
+.navbar-link{
+  float: right;
+  position: sticky;
+}
+.navlink{
+  color: #1490b5;
+  background-color: #fff;
+  text-decoration: none;
+  padding: 5px;
+  margin: 10px;
+  border: #f95558 2px dotted;
+  border-radius: 40px;
+  font-size: 15px;
+  font-family: corsiva, cursive;
+}
+.landingPGSpan{
+  color: #1490b5;
+  font-size: 20px;
+  font-family: corsiva, cursive;
+}
+.mainPGContent{
+  background-image: url("https://bytebucket.org/jahdasha/thegodparent/raw/c7f6058905b40b7e0e762d8e1a09bcf83e37fca4/public/images/baby-feet-bottle.jpg?token=137086709c6c5ac23f4f3649d1b6cde9e1384715")
+}
+.aboutContent{
+  background-color: white;
+  opacity: 0.9;
+  text-align: center;
+  display: block;
+  margin: auto;
+  height: 100%;
+  width: 75%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.itemLists{
+  padding-top: 5px;
+}
+.new-item{
+  text-align: center;
+  display: block;
+  margin: auto;
+  height: 100%;
+  width: 100%;
+}
+.babyItem{
+  color: #f95558;
+  text-decoration: line;
+}
+.btn-success, .btn-cancel{
+  color: #1490b5;
+  background-color: #fff;
+  padding: 5px;
+  margin: 10px;
+  border: #f95558 2px dotted;
+  border-radius: 40px;
+  font-size: 15px;
+  font-family: corsiva, cursive;
+}
+.paragraph{
+  color: #f95558;
+  margin: 10px;
+}
+.single-item{
+  font-family: corsiva, cursive;
+}

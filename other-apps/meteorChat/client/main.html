@@ -1,0 +1,27 @@
+<head>
+  <title>Cool New Chat App.</title>
+</head>
+
+<body>
+  {{> loginButtons }}
+  {{> home}}
+</body>
+
+<template name="home">
+  <h2>Current Messages</h2>
+  <dl id='message-container'>
+    {{#each message}}
+    <li>{{this.user.username}} - {{this.text}}</li>
+    {{/each}}
+  </dl>
+  <h2>Create A Message</h2>
+
+  {{#if userLoggedIn}}
+  <form action="" id="new-msg">
+    <input type="text" name="message">
+    <input type="submit" value="">
+  </form>
+  {{else}}
+  <p>Please log in or register to chat.</p>
+  {{/if}}
+</template>

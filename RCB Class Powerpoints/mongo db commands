@@ -1,0 +1,373 @@
+Last login: Tue May 31 19:35:23 on ttys000
+Jahdashas-MacBook-Pro:~ jahdashaflagg$ cd brew update
+-bash: cd: brew: No such file or directory
+Jahdashas-MacBook-Pro:~ jahdashaflagg$ brew update
+Error: The /usr/local directory is not writable.
+Even if this directory was writable when you installed Homebrew, other
+software may change permissions on this directory. For example, upgrading
+to OS X El Capitan has been known to do this. Some versions of the
+"InstantOn" component of Airfoil or running Cocktail cleanup/optimizations
+are known to do this as well.
+
+You should probably change the ownership and permissions of /usr/local
+back to your user account.
+  sudo chown -R $(whoami):admin /usr/local
+Jahdashas-MacBook-Pro:~ jahdashaflagg$ sudo chown -R $(whoami):admin /usr/local
+Password:
+Jahdashas-MacBook-Pro:~ jahdashaflagg$ brew update
+Updated Homebrew from b3300f2 to 7cbd735.
+==> Migrating Homebrew to v0.9.9
+remote: Counting objects: 264, done.
+remote: Compressing objects: 100% (215/215), done.
+remote: Total 264 (delta 138), reused 121 (delta 35), pack-reused 0
+Receiving objects: 100% (264/264), 444.08 KiB | 0 bytes/s, done.
+Resolving deltas: 100% (138/138), completed with 136 local objects.
+From https://github.com/Homebrew/brew
+ + 7cbd735...b2c9625 master     -> origin/master  (forced update)
+Checking out files: 100% (240/240), done.
+HEAD is now at b2c9625 formula_installer: accumulate inherited options
+==> Homebrew has enabled anonymous aggregate user behaviour analytics
+Read the analytics documentation (and how to opt-out) here:
+  https://git.io/brew-analytics
+==> Tapping homebrew/core
+Cloning into '/usr/local/Library/Taps/homebrew/homebrew-core'...
+remote: Counting objects: 3709, done.
+remote: Compressing objects: 100% (3591/3591), done.
+remote: Total 3709 (delta 13), reused 2415 (delta 9), pack-reused 0
+Receiving objects: 100% (3709/3709), 2.88 MiB | 5.24 MiB/s, done.
+Resolving deltas: 100% (13/13), done.
+Checking connectivity... done.
+Checking out files: 100% (3712/3712), done.
+Tapped 3587 formulae (3,735 files, 9.0M)
+==> Cleaning up /Library/Caches/Homebrew...
+Removing: /Library/Caches/Homebrew/libpng-1.6.20.el_capitan.bottle.tar.gz... (425.8K)
+Removing: /Library/Caches/Homebrew/libtiff-4.0.6.el_capitan.bottle.tar.gz... (1M)
+Removing: /Library/Caches/Homebrew/mysql-5.7.10.el_capitan.bottle.2.tar.gz... (92M)
+Removing: /Library/Caches/Homebrew/openssl-1.0.2e_1.el_capitan.bottle.tar.gz... (3.6M)
+Removing: /Library/Caches/Homebrew/tesseract-3.04.00.tar.gz... (2.2M)
+==> Migrating /Library/Caches/Homebrew to /Users/jahdashaflagg/Library/Caches/Ho
+==> Deleting /Library/Caches/Homebrew...
+Already up-to-date.
+Jahdashas-MacBook-Pro:~ jahdashaflagg$ brew install mongodb
+==> Installing dependencies for mongodb: openssl
+==> Installing mongodb dependency: openssl
+==> Downloading https://homebrew.bintray.com/bottles/openssl-1.0.2h_1.el_capitan
+######################################################################## 100.0%
+==> Pouring openssl-1.0.2h_1.el_capitan.bottle.tar.gz
+==> Caveats
+A CA file has been bootstrapped using certificates from the system
+keychain. To add additional certificates, place .pem files in
+  /usr/local/etc/openssl/certs
+
+and run
+  /usr/local/opt/openssl/bin/c_rehash
+
+This formula is keg-only, which means it was not symlinked into /usr/local.
+
+Apple has deprecated use of OpenSSL in favor of its own TLS and crypto libraries
+
+Generally there are no consequences of this for you. If you build your
+own software and it requires this formula, you'll need to add to your
+build variables:
+
+    LDFLAGS:  -L/usr/local/opt/openssl/lib
+    CPPFLAGS: -I/usr/local/opt/openssl/include
+
+==> Summary
+🍺  /usr/local/Cellar/openssl/1.0.2h_1: 1,691 files, 12M
+==> Installing mongodb
+==> Downloading https://homebrew.bintray.com/bottles/mongodb-3.2.6.el_capitan.bo
+######################################################################## 100.0%
+==> Pouring mongodb-3.2.6.el_capitan.bottle.tar.gz
+==> Caveats
+To have launchd start mongodb now and restart at login:
+  brew services start mongodb
+Or, if you don't want/need a background service you can just run:
+  mongod --config /usr/local/etc/mongod.conf
+==> Summary
+🍺  /usr/local/Cellar/mongodb/3.2.6: 17 files, 263.8M
+Jahdashas-MacBook-Pro:~ jahdashaflagg$ brew install mongodb --with-openssl
+Warning: mongodb-3.2.6 already installed
+Jahdashas-MacBook-Pro:~ jahdashaflagg$ brew install mongodb --devel
+Error: No devel block is defined for mongodb
+Jahdashas-MacBook-Pro:~ jahdashaflagg$ curl -O https://fastdl.mongodb.org/osx/mongodb-osx-x86_64-3.2.6.tgz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 60.9M  100 60.9M    0     0  12.0M      0  0:00:05  0:00:05 --:--:-- 13.6M
+Jahdashas-MacBook-Pro:~ jahdashaflagg$ brew services start mongodb
+==> Tapping homebrew/services
+Cloning into '/usr/local/Library/Taps/homebrew/homebrew-services'...
+remote: Counting objects: 7, done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 7 (delta 0), reused 3 (delta 0), pack-reused 0
+Unpacking objects: 100% (7/7), done.
+Checking connectivity... done.
+Tapped 0 formulae (32 files, 46.7K)
+==> Successfully started `mongodb` (label: homebrew.mxcl.mongodb)
+Jahdashas-MacBook-Pro:~ jahdashaflagg$ mongo
+MongoDB shell version: 3.2.6
+connecting to: test
+Welcome to the MongoDB shell.
+For interactive help, type "help".
+For more comprehensive documentation, see
+	http://docs.mongodb.org/
+Questions? Try the support group
+	http://groups.google.com/group/mongodb-user
+> help
+	db.help()                    help on db methods
+	db.mycoll.help()             help on collection methods
+	sh.help()                    sharding helpers
+	rs.help()                    replica set helpers
+	help admin                   administrative help
+	help connect                 connecting to a db help
+	help keys                    key shortcuts
+	help misc                    misc things to know
+	help mr                      mapreduce
+
+	show dbs                     show database names
+	show collections             show collections in current database
+	show users                   show users in current database
+	show profile                 show most recent system.profile entries with time >= 1ms
+	show logs                    show the accessible logger names
+	show log [name]              prints out the last segment of log in memory, 'global' is default
+	use <db_name>                set current database
+	db.foo.find()                list objects in collection foo
+	db.foo.find( { a : 1 } )     list objects in foo where a == 1
+	it                           result of the last line evaluated; use to further iterate
+	DBQuery.shellBatchSize = x   set default number of items to display on shell
+	exit                         quit the mongo shell
+> exit
+bye
+Jahdashas-MacBook-Pro:~ jahdashaflagg$ mongo
+MongoDB shell version: 3.2.6
+connecting to: test
+> use lessonsdb
+switched to db lessonsdb
+> exit
+bye
+Jahdashas-MacBook-Pro:~ jahdashaflagg$ mongo
+MongoDB shell version: 3.2.6
+connecting to: test
+> use lessonsdb
+switched to db lessonsdb
+> show collections
+> use lessondb
+switched to db lessondb
+> db.students.insert({name:"Bilal", GPA:"2.5", GPANum:2.5, grade:4})
+WriteResult({ "nInserted" : 1 })
+> show collections
+students
+> use classroomdb
+switched to db classroomdb
+> db.students.insert({name:"Huro", rowNumber:3, oc:"Mac", hobbies:["coding", "sleeping", "drinking"]})
+WriteResult({ "nInserted" : 1 })
+> db.students.insert({name:"Jahdasha", rowNumber:3, oc:"Mac", hobbies:["coding", "dancing", "eating"]})
+WriteResult({ "nInserted" : 1 })
+> db.students.insert({name:"Jaime", rowNumber:3, oc:"Mac", hobbies:["harrassing", "bossing people around", "sitting in Jahdasha's seat"]})
+WriteResult({ "nInserted" : 1 })
+> db.students.insert({name:"Brianne", rowNumber:3, oc:"Mac", hobbies:["ganging up on Jaime with Jahdasha", "eating cold food", "speaking up in class"]})
+WriteResult({ "nInserted" : 1 })
+> show collections
+students
+> db.classroomdb.find({os:"Mac"})
+> db.classroomdb.find({ os:"Mac" })
+> db.classroomdb.find({ oc:"Mac" })
+> db.classroomdb.find({oc:"Mac"})
+> db.classroomdb.find({rowNumber:3})
+> db.classroomdb.find({rokoNumber:3 })
+> show collections
+students
+> db.students.find({rokoNumber:3 })
+> db.students.find({rowNumber:3 })
+{ "_id" : ObjectId("5750c99e0f5e7254a1c0d051"), "name" : "Huro", "rowNumber" : 3, "oc" : "Mac", "hobbies" : [ "coding", "sleeping", "drinking" ] }
+{ "_id" : ObjectId("5750ca280f5e7254a1c0d052"), "name" : "Jahdasha", "rowNumber" : 3, "oc" : "Mac", "hobbies" : [ "coding", "dancing", "eating" ] }
+{ "_id" : ObjectId("5750ca990f5e7254a1c0d053"), "name" : "Jaime", "rowNumber" : 3, "oc" : "Mac", "hobbies" : [ "harrassing", "bossing people around", "sitting in Jahdasha's seat" ] }
+{ "_id" : ObjectId("5750caf50f5e7254a1c0d054"), "name" : "Brianne", "rowNumber" : 3, "oc" : "Mac", "hobbies" : [ "ganging up on Jaime with Jahdasha", "eating cold food", "speaking up in class" ] }
+> db.students.find().pretty()
+{
+	"_id" : ObjectId("5750c99e0f5e7254a1c0d051"),
+	"name" : "Huro",
+	"rowNumber" : 3,
+	"oc" : "Mac",
+	"hobbies" : [
+		"coding",
+		"sleeping",
+		"drinking"
+	]
+}
+{
+	"_id" : ObjectId("5750ca280f5e7254a1c0d052"),
+	"name" : "Jahdasha",
+	"rowNumber" : 3,
+	"oc" : "Mac",
+	"hobbies" : [
+		"coding",
+		"dancing",
+		"eating"
+	]
+}
+{
+	"_id" : ObjectId("5750ca990f5e7254a1c0d053"),
+	"name" : "Jaime",
+	"rowNumber" : 3,
+	"oc" : "Mac",
+	"hobbies" : [
+		"harrassing",
+		"bossing people around",
+		"sitting in Jahdasha's seat"
+	]
+}
+{
+	"_id" : ObjectId("5750caf50f5e7254a1c0d054"),
+	"name" : "Brianne",
+	"rowNumber" : 3,
+	"oc" : "Mac",
+	"hobbies" : [
+		"ganging up on Jaime with Jahdasha",
+		"eating cold food",
+		"speaking up in class"
+	]
+}
+> db.students.update({name:"Brianne"}, {$set: {rowNumber: 4})
+... 
+... help
+... exit
+... 
+... 
+> db.students.update({name:"Brianne"}, {$set: {rowNumber: 4}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.students.find().pretty()
+{
+	"_id" : ObjectId("5750c99e0f5e7254a1c0d051"),
+	"name" : "Huro",
+	"rowNumber" : 3,
+	"oc" : "Mac",
+	"hobbies" : [
+		"coding",
+		"sleeping",
+		"drinking"
+	]
+}
+{
+	"_id" : ObjectId("5750ca280f5e7254a1c0d052"),
+	"name" : "Jahdasha",
+	"rowNumber" : 3,
+	"oc" : "Mac",
+	"hobbies" : [
+		"coding",
+		"dancing",
+		"eating"
+	]
+}
+{
+	"_id" : ObjectId("5750ca990f5e7254a1c0d053"),
+	"name" : "Jaime",
+	"rowNumber" : 3,
+	"oc" : "Mac",
+	"hobbies" : [
+		"harrassing",
+		"bossing people around",
+		"sitting in Jahdasha's seat"
+	]
+}
+{
+	"_id" : ObjectId("5750caf50f5e7254a1c0d054"),
+	"name" : "Brianne",
+	"rowNumber" : 4,
+	"oc" : "Mac",
+	"hobbies" : [
+		"ganging up on Jaime with Jahdasha",
+		"eating cold food",
+		"speaking up in class"
+	]
+}
+> db.students.update({name:"Brianne"}, {$push: {hobbies: "taking care of business"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.students.find().pretty()
+{
+	"_id" : ObjectId("5750c99e0f5e7254a1c0d051"),
+	"name" : "Huro",
+	"rowNumber" : 3,
+	"oc" : "Mac",
+	"hobbies" : [
+		"coding",
+		"sleeping",
+		"drinking"
+	]
+}
+{
+	"_id" : ObjectId("5750ca280f5e7254a1c0d052"),
+	"name" : "Jahdasha",
+	"rowNumber" : 3,
+	"oc" : "Mac",
+	"hobbies" : [
+		"coding",
+		"dancing",
+		"eating"
+	]
+}
+{
+	"_id" : ObjectId("5750ca990f5e7254a1c0d053"),
+	"name" : "Jaime",
+	"rowNumber" : 3,
+	"oc" : "Mac",
+	"hobbies" : [
+		"harrassing",
+		"bossing people around",
+		"sitting in Jahdasha's seat"
+	]
+}
+{
+	"_id" : ObjectId("5750caf50f5e7254a1c0d054"),
+	"name" : "Brianne",
+	"rowNumber" : 4,
+	"oc" : "Mac",
+	"hobbies" : [
+		"ganging up on Jaime with Jahdasha",
+		"eating cold food",
+		"speaking up in class",
+		"taking care of business"
+	]
+}
+> use zoodb
+switched to db zoodb
+> db.animals.insert({name:"lion", numlegs:4, class:"mammal", avgWeight:300, whatIWouldReallyCallIt: Nyla]})
+2016-06-04T10:12:58.490-0400 E QUERY    [thread1] SyntaxError: missing } after property list @(shell):1:102
+
+> db.animals.insert({name:"lion", numlegs:4, class:"mammal", avgWeight:300, whatIWouldReallyCallIt: Nyla})
+2016-06-04T10:13:15.190-0400 E QUERY    [thread1] ReferenceError: Nyla is not defined :
+@(shell):1:75
+
+> db.animals.insert({name:"lion", numlegs:4, class:"mammal", avgWeight:300, whatIWouldReallyCallIt:"Nyla"})
+WriteResult({ "nInserted" : 1 })
+> db.animals.insert({name:"panther", numlegs:4, class:"mammal", avgWeight:300, whatIWouldReallyCallIt:"Nia"})
+WriteResult({ "nInserted" : 1 })
+> db.animals.insert({name:"panda", numlegs:4, class:"mammal", avgWeight:300, whatIWouldReallyCallIt:"Designer"})
+WriteResult({ "nInserted" : 1 })
+> db.animals.insert({name:"alligator", numlegs:4, class:"reptile", avgWeight:250, whatIWouldReallyCallIt:"Gerry"})
+WriteResult({ "nInserted" : 1 })
+> db.animals.insert({name:"parrot", numlegs:4, class:"bird", avgWeight:250, whatIWouldReallyCallIt:"Iyago"})
+WriteResult({ "nInserted" : 1 })
+> db.animals.find()
+{ "_id" : ObjectId("5752e20b0f5e7254a1c0d055"), "name" : "lion", "numlegs" : 4, "class" : "mammal", "avgWeight" : 300, "whatIWouldReallyCallIt" : "Nyla" }
+{ "_id" : ObjectId("5752e22e0f5e7254a1c0d056"), "name" : "panther", "numlegs" : 4, "class" : "mammal", "avgWeight" : 300, "whatIWouldReallyCallIt" : "Nia" }
+{ "_id" : ObjectId("5752e26e0f5e7254a1c0d057"), "name" : "panda", "numlegs" : 4, "class" : "mammal", "avgWeight" : 300, "whatIWouldReallyCallIt" : "Designer" }
+{ "_id" : ObjectId("5752e29f0f5e7254a1c0d058"), "name" : "alligator", "numlegs" : 4, "class" : "reptile", "avgWeight" : 250, "whatIWouldReallyCallIt" : "Gerry" }
+{ "_id" : ObjectId("5752e2da0f5e7254a1c0d059"), "name" : "parrot", "numlegs" : 4, "class" : "bird", "avgWeight" : 250, "whatIWouldReallyCallIt" : "Iyago" }
+> db.animals.insert({name:"bear", numlegs:4, class:"mammal", avgWeight:350, whatIWouldReallyCallIt:"Babar"})
+WriteResult({ "nInserted" : 1 })
+> db.animals.find()
+{ "_id" : ObjectId("5752e20b0f5e7254a1c0d055"), "name" : "lion", "numlegs" : 4, "class" : "mammal", "avgWeight" : 300, "whatIWouldReallyCallIt" : "Nyla" }
+{ "_id" : ObjectId("5752e22e0f5e7254a1c0d056"), "name" : "panther", "numlegs" : 4, "class" : "mammal", "avgWeight" : 300, "whatIWouldReallyCallIt" : "Nia" }
+{ "_id" : ObjectId("5752e26e0f5e7254a1c0d057"), "name" : "panda", "numlegs" : 4, "class" : "mammal", "avgWeight" : 300, "whatIWouldReallyCallIt" : "Designer" }
+{ "_id" : ObjectId("5752e29f0f5e7254a1c0d058"), "name" : "alligator", "numlegs" : 4, "class" : "reptile", "avgWeight" : 250, "whatIWouldReallyCallIt" : "Gerry" }
+{ "_id" : ObjectId("5752e2da0f5e7254a1c0d059"), "name" : "parrot", "numlegs" : 4, "class" : "bird", "avgWeight" : 250, "whatIWouldReallyCallIt" : "Iyago" }
+{ "_id" : ObjectId("5752e3470f5e7254a1c0d05a"), "name" : "bear", "numlegs" : 4, "class" : "mammal", "avgWeight" : 350, "whatIWouldReallyCallIt" : "Babar" }
+> db.animals.find().sort({_id:-1})
+{ "_id" : ObjectId("5752e3470f5e7254a1c0d05a"), "name" : "bear", "numlegs" : 4, "class" : "mammal", "avgWeight" : 350, "whatIWouldReallyCallIt" : "Babar" }
+{ "_id" : ObjectId("5752e2da0f5e7254a1c0d059"), "name" : "parrot", "numlegs" : 4, "class" : "bird", "avgWeight" : 250, "whatIWouldReallyCallIt" : "Iyago" }
+{ "_id" : ObjectId("5752e29f0f5e7254a1c0d058"), "name" : "alligator", "numlegs" : 4, "class" : "reptile", "avgWeight" : 250, "whatIWouldReallyCallIt" : "Gerry" }
+{ "_id" : ObjectId("5752e26e0f5e7254a1c0d057"), "name" : "panda", "numlegs" : 4, "class" : "mammal", "avgWeight" : 300, "whatIWouldReallyCallIt" : "Designer" }
+{ "_id" : ObjectId("5752e22e0f5e7254a1c0d056"), "name" : "panther", "numlegs" : 4, "class" : "mammal", "avgWeight" : 300, "whatIWouldReallyCallIt" : "Nia" }
+{ "_id" : ObjectId("5752e20b0f5e7254a1c0d055"), "name" : "lion", "numlegs" : 4, "class" : "mammal", "avgWeight" : 300, "whatIWouldReallyCallIt" : "Nyla" }
+> 

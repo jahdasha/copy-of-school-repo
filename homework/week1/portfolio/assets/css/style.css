@@ -1,0 +1,151 @@
+/* css Jahdasha Flagg Portfolio default style v1.02 */
+/* css released under Creative Commons License - http://creativecommons.org/licenses/by-nc-sa/1.0/  */
+
+
+/* basic elements */
+* {
+  box-sizing: border-box;
+  text-align: center;
+
+}
+html{
+	position: relative;
+    min-height: 100%;
+}
+body {
+	color: #777777;
+	background-image: url("../images/husk.jpg");
+	margin: 0 0 100px; /* bottom = footer height */
+}
+p, form, input{
+	text-align: left;
+}
+a{
+	color: #777777;
+}
+/* unvisited link */
+a:link {
+    color: red;
+}
+/* visited link */
+a:visited {
+    color: #4A044A;
+}
+/* mouse over link */
+a:hover {
+    color: #7784E4;
+}
+/* selected link */
+a:active {
+    color: #FFCE0E;
+}
+header {
+	font-family: 'Georgia', Times, serif;
+	background: #ffffff;
+	border: 1px solid #cccccc;
+	margin-bottom: 40px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+section{
+	background: #ccc;
+}
+li{
+	float: left;
+}
+div {
+	float: left;
+	background: #fff;
+	border: 1px solid #eee;
+	padding: 30px;
+	margin: 10px;
+}
+footer {
+	font-family:'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+	border: 1px solid #666666;
+	border-top-color: #4aaaa5;
+	border-top-width: 10px;
+	background: gray;
+	font-size: 12px;
+	color: #ffffff;
+	clear: both;
+	padding-top: 40px;
+	position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+}
+img{
+	float: left;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	height: 60px;
+	width: 60px;
+}
+span{
+	color: red;
+	font: bold;
+}
+input{
+	width: 440px;
+	color: #dddbdb;
+}
+.profile_pic{
+	width: 150px;
+	height: 170px;
+}
+.portfolio-pic{
+	width: 150px;
+	height: 150px;
+	margin: 30px;
+}
+.content-headings{
+	color: #4aaaa5;
+	font-weight: bold;
+}
+#submit{
+	background: #4aaaa5;
+	color: #fff;
+	width: 100px;
+	text-align: center;
+}
+#message{
+	height: 200px;
+}
+#line1{
+	border-style: 2px;
+}
+#line2{
+	border-style: 1px;
+}
+#left {
+	margin-left: 200px;
+	float: left;
+	background: #4aaaa5;
+	color: #fff;
+	padding: 22px;
+    margin-top: -30px;
+}
+#right {
+	margin-right: 200px;
+	float: right;
+	background: #fff;
+	color: black;
+	padding: 22px;
+    margin-top: -30px;
+}
+#full {
+	font-family:'Arial', 'Helvetica Neue', Helvetica, sans-serif;	 
+}
+#left-content {
+	margin-left: 200px;
+	border-style: #dddddd;
+	width: 500px;
+	float:left
+}
+#right-content{
+	width: 270px;
+	float:right;
+	margin-right: 200px;
+}

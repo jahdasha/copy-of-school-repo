@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    Arrays, Objects, Fuctions or Method
+  </title>
+</head>
+<body>
+<script type="text/javascript">
+
+//PART 1 OF EXERCISE
+var coolPeople = ['bruce lee', 'arnold schwarzenegger', 'will smith', 'esther', 'marie curie', 'joan of arc'];
+
+//console.log out each part of the coolPeople array
+console.log(coolPeople[0]);
+console.log(coolPeople[1]);
+console.log(coolPeople[2]);
+console.log(coolPeople[3]);
+console.log(coolPeople[4]); 
+console.log(coolPeople[5]);
+
+// PART 2 OF EXERCISE
+// make an array of drinks with all capitals
+// modify each part of the array of drinks and make each item lowercased - DO NOT DIRECTLY EDIT THE INSIDE OF THE ARRAY! 
+var drinks = ['WATER', 'APPLE JUICE', 'ORANGE JUICE', 'GINGER ALE'];
+
+console.log(drinks[0].toLowerCase());
+console.log(drinks[1].toLowerCase());
+console.log(drinks[2].toLowerCase());
+console.log(drinks[3].toLowerCase());
+
+console.log(drinks.length);
+// checks the length of this array
+
+//BONUS PART
+
+var gameboy = [ 'Game Boy', 'nintendo', 149.99 ];
+var pokemon = [ 'Pokemon Blue', 'nintendo', 49.99 ];
+var tetris = [ 'Tetris', 'SEGA', 49.99 ];
+
+var cart = [gameboy,pokemon,tetris];
+
+console.log(cart[1][0]); //name of the pokemon game
+// this references a position inside of an array that is also in an array
+console.log(cart[2][2]); //price of the tetris game
+cart[2][2] = 9012; // changes the price of the tetris game
+var mario = ['Mario Cart', 'nintendo', 25.99];
+
+cart.push(mario);
+
+</script>
+</body>
+</html>

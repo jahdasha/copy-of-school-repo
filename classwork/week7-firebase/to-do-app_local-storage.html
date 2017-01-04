@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To Do App!</title>
+</head>
+<body>
+
+<!-- Title -->
+<h1>My To Dos!</h1>
+
+<!-- Input Form -->
+<form>
+  <h2>To Do Item: <input type="text" id="todo"><input type="submit" value="Add Item" id="addTodo"></h2>
+</form>
+
+<hr>
+
+<!-- To-Do List -->
+<div id="todos">
+    
+</div>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+
+<script>
+
+// Create an initial todoCount variable
+var todoCount = 0;
+var todoList = [];
+
+// On Click event associated with the addTodo function
+$("#addTodo").on("click", function(){
+
+    // Get the Todo "value" from the textbox
+    var todoTask = $('#todo').val().trim();
+    var todoItem = $('<p>');
+    todoItem.attr("id", "item-" + todoCount);
+    todoItem.append(" " + todoTask);  
+    var todoClose = $("<button>");
+    todoClose.attr("data-todo", todoCount);
+    todoClose.addClass("checkbox");
+    todoClose.append("X");
+    todoItem = todoItem.prepend(todoClose);
+    $("#todos").append(todoItem);
+    $('#todo').val("");
+
+    todoList.push(todoTask); // adds the todo item to the list of todos
+    console.log(todoList); // tests the push function to make sure the array is being filled
+    todoCount++;
+
+    // Prevent Form from Refreshing (return false)
+    return false;
+});
+
+$(document.body).on('click', '.checkbox', function(){
+
+    // Get the todoNumber of the button from its data attribute.
+    var todoNumber = $(this).data("todo");
+
+    // Empty the specific <p> element that previously held the todo item.
+    $("#item-" + todoNumber).empty();
+
+});
+
+</script>
+
+</body>
+</html>

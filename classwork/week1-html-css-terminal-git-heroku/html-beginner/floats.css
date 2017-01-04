@@ -1,0 +1,30 @@
+/* css Jahdasha Flagg Portfolio default style v1.02 */
+/* css released under Creative Commons License - http://creativecommons.org/licenses/by-nc-sa/1.0/  */
+
+
+/* basic elements */
+html {
+	color: black; 
+	}
+
+header{
+	background-color: gray;
+	text-align: center;
+}
+
+section{
+	background-color: black;
+	color: white;
+	text-align: center;
+	float: left;
+}
+footer{
+	background-color: gray;
+	text-align: center;
+	clear: both;
+}
+
+aside{
+	background-color: white;
+	color: black;
+}

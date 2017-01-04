@@ -1,0 +1,33 @@
+<!-- main section/search results -->
+	<div id="searchSection" class="container">
+
+		<div class="page-header">
+			<h2>Results for UPC: <span id="upcCodeResult">{{search.upc}}</span></h2>
+		</div>
+			<h4>Name: </h4>
+			<span class="listItems">{{search.product_name}}</span>
+			<ul>
+				<h4>Allergens Present: </h4>
+				{{#each search.allergens}}
+					<li class="listItems">
+						{{#if allergen_value}}
+							{{allergen_name}}
+						{{/if}}
+					</li>
+				{{/each}}
+			</ul>
+
+			<ul>
+				<h4>Ingredients:</h4>
+				<li class="listItems">
+					{{search.ingredients}}
+				</li>
+			</ul>
+
+	<div id= "searchAgain">
+		<a href="/"><button class= "buttons" id="newSearchButton">Search again?</button></a>
+	</div>
+
+</div>
+
+<script src="javascript/searchScript.js"></script>

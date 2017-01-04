@@ -1,0 +1,17 @@
+{
+  "name": "algortithm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "color_test.js",
+  "dependencies": {
+    "lwip": "0.0.9",
+    "matrix-with": "^1.0.0",
+    "microseconds": "^0.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

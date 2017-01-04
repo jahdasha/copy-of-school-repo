@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Marvel Project</title>
+    <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+    <h1>My Marvel Project!</h1>
+
+    <div id="comicView">
+    </div>
+
+    <form id="comic-form">
+        <label for="comic-input">Search for a comic</label>
+        <input type="text" id="comic-input"><br>
+        <input id="findComic" type="submit" value="Comic Search">
+    </form>
+<!-- javascript -->
+<script src='http://code.jquery.com/jquery-2.1.3.min.js'></script>
+<script type="text/javascript">
+$("#findComic").on('click', function(){
+    
+    var comicName = $('#comic-input').val();
+
+    // Variable needed for the hash
+    var ts = new Date().getTime(); 
+    var PRIV_KEY = "9ced83e38521d6850703a1c54a18fea775a60964"
+    var API_KEY = "bdcf4ef10cbcac4120f014ab0e020243";
+    var hash = CryptoJS.MD5(ts+PRIV_KEY + API_KEY);
+    // apikey for the end of the url
+    var apiKey = "bdcf4ef10cbcac4120f014ab0e020243";
+
+    // var url = "http://gateway.marvel.com/v1/public/characters?name=spider-man&ts="+ts+"&hash="+hash+"&apikey="+apiKey;
+    var url = "http://gateway.marvel.com/v1/public/characters?name="+comicName+"&ts="+ts+"&hash="+hash+"&apikey="+apiKey;
+    console.log(url);
+
+    $.ajax({url: url, method: "GET"}).done
+        (function(data) {
+        console.log(data);
+        // console test to make sure something returns
+        var jsonText = JSON.stringify(data);
+        $("#comicView").html(jsonText);
+                     
+     });
+
+    return false; // cancels the input submit button, rather than it going to another page when we right false it does nothing
+    })
+</script>
+</body>
+</html>
